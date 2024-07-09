@@ -126,13 +126,17 @@ $('document').ready(function(){
 	});	
 
 	$('#cake_fadein').click(function(){
+		$('#birthday_cake').css("display", "block");
 		$('.cake').fadeIn('slow');
+
+		$('#birthday_cake').fadeIn('slow');
 		$(this).fadeOut('slow').delay(3000).promise().done(function(){
 			$('#light_candle').fadeIn('slow');
 		});
 	});
 
 	$('#light_candle').click(function(){
+		$('#candle').css("display", "block");
 		$('.fuego').fadeIn('slow');
 		$(this).fadeOut('slow').promise().done(function(){
 			$('#wish_message').fadeIn('slow');
@@ -169,45 +173,25 @@ $('document').ready(function(){
 	});
 	
 	$('#story').click(function(){
-		$(this).fadeOut('slow');
+		// $(this).fadeOut('slow');
 		$('.cake').fadeOut('fast').promise().done(function(){
 			$('.message').fadeIn('slow');
 		});
 
+		$('#birthday_cake').hide()
 		$('.balloons').hide();
 		$('#person').css({"display": "none"});
 		
 		$('#card').css("display", "block");
 		$('#card').show();
 
+		$('#card').css('position', 'absolute');
+		$('#card').css('z-index', 9999);
+
 		$(this).fadeOut('slow').delay(3000).promise().done(function(){
 			$('#close').fadeIn('slow');
 		});
 
-		// $('#card').css('position', 'absolute');
-		// $('#card').css('z-index', 9999);
-
-		// var i;
-
-		// function msgLoop (i) {
-		// 	$("p:nth-child("+i+")").fadeOut('slow').delay(800).promise().done(function(){
-		// 	i=i+1;
-		// 	$("p:nth-child("+i+")").fadeIn('slow').delay(1000);
-		// 	if(i==50){
-		// 		$("p:nth-child(49)").fadeOut('slow').promise().done(function () {
-		// 			$('.cake').fadeIn('fast');
-		// 		});
-				
-		// 	}
-		// 	else{
-		// 		msgLoop(i);
-		// 	}			
-
-		// });
-			// body...
-		// }
-		
-		// msgLoop(0);
 		
 	});
 
@@ -217,7 +201,29 @@ $('document').ready(function(){
 		$('#person').css({"display": "block"});
 		$('#card').hide();
 
+		var i;
+
+		function msgLoop (i) {
+			$("p:nth-child("+i+")").fadeOut('slow').delay(800).promise().done(function(){
+			i=i+1;
+			$("p:nth-child("+i+")").fadeIn('slow').delay(1000);
+			if(i==50){
+				$("p:nth-child(49)").fadeOut('slow').promise().done(function () {
+					$('.cake').fadeIn('fast');
+				});
+				
+			}
+			else{
+				msgLoop(i);
+			}			
+
+		});
+			// body...
+		}
 		
+		msgLoop(0);
+
+		$('#birthday_cake').show();
 	});
 });
 
