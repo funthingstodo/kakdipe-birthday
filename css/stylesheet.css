@@ -1254,7 +1254,7 @@ audio {
 	position: fixed;
 	top:50%;
 	opacity: .9;
-	z-index: 9999;
+	z-index: 90;
 	width: 10%;
 	height: 20%;
 }
@@ -1270,8 +1270,18 @@ audio {
 	bottom: 0;
 	padding:10px 0px 10px 0px;
 }
-#play, #bannar_coming, #balloons_flying,#cake_fadein,#light_candle,#wish_message,#story,#close, #person {
+#play, #bannar_coming, #balloons_flying,#cake_fadein,#light_candle,#wish_message,#story,#close, #birthday_cake, #person {
 	display: none;
+}
+
+.cake_class{
+	position: fixed;
+	left:45%;
+	top:60%;
+	opacity: 1.0;
+	z-index: 90;
+	width: 12%;
+	height: 20%;
 }
 
 .cake-cover {
