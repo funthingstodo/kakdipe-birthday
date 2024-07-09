@@ -126,17 +126,16 @@ $('document').ready(function(){
 	});	
 
 	$('#cake_fadein').click(function(){
-		$('#birthday_cake').css("display", "block");
+		// $('#birthday_cake').css("display", "block");
 		$('.cake').fadeIn('slow');
-
-		$('#birthday_cake').fadeIn('slow');
+		$('#candle').css("display", "block");
+		// $('#birthday_cake').fadeIn('slow');
 		$(this).fadeOut('slow').delay(3000).promise().done(function(){
 			$('#light_candle').fadeIn('slow');
 		});
 	});
 
 	$('#light_candle').click(function(){
-		$('#candle').css("display", "block");
 		$('.fuego').fadeIn('slow');
 		$(this).fadeOut('slow').promise().done(function(){
 			$('#wish_message').fadeIn('slow');
@@ -178,7 +177,7 @@ $('document').ready(function(){
 			$('.message').fadeIn('slow');
 		});
 
-		$('#birthday_cake').hide()
+		// $('#birthday_cake').hide()
 		$('.balloons').hide();
 		$('#person').css({"display": "none"});
 		
@@ -223,7 +222,7 @@ $('document').ready(function(){
 		
 		msgLoop(0);
 
-		$('#birthday_cake').show();
+		// $('#birthday_cake').show();
 	});
 });
 
